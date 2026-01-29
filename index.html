@@ -2,70 +2,111 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>School XC — Home</title>
+    <title>School XC</title>
     <link rel="stylesheet" href="reset.css" />
   </head>
   <body>
+    <a href="#main">Skip to main content</a>
     <header>
         <h1>School XC</h1>
 
         <nav aria-label="Primary">
             <ul>
             <li><a aria-current="page" href="index.html">Race</a></li>
-            <li><a href="comment.html">Coach Comments</a></li>
+            <li><a href="comments.html">Coach Comments</a></li>
             </ul>
         </nav>
     </header>
 
-        <main id="main">
-        <section aria-labelledby="athletes-heading">
+    <main id="main">
+        <section aria-labelledby="athlete-section-heading">
+            <h2 id="athlete-section-heading">Athlete</h2>
+
+            <article id="athlete-{{ATHLETE_ID}}" aria-labelledby="athlete-name-{{ATHLETE_ID}}">
             <header>
-            <h2 id="athletes-heading">Athletes</h2>
+                <img src="{{ATHLETE_PHOTO}}" alt="Photo of {{ATHLETE_NAME}}" />
+                <h3 id="athlete-name-{{ATHLETE_ID}}">{{ATHLETE_NAME}}</h3>
+                <p>Grade: {{ATHLETE_GRADE}}</p>
             </header>
 
-            <article id="alex-rivera" aria-labelledby="athlete-name">
-                <header>
-                    <img src="{{ATHLETE_PHOTO}}" alt="Photo of Alex Rivera" />
-                    <h2 id="athlete-name">{{ATHLETE_NAME}}</h2>
-                    <p>Grade: {{ATHLETE_GRADE}}</p>
-                </header>
+            <section aria-labelledby="bio-heading-{{ATHLETE_ID}}">
+                <h4 id="bio-heading-{{ATHLETE_ID}}">Bio</h4>
+                <p>{{ATHLETE_BIO}}</p>
+            </section>
 
-                <section aria-labelledby="bio-heading">
-                    <h3 id="bio-heading">Bio: </h3>
-                    <p>{{ATHLETE_BIO}}</p>
-                </section>
-
-                <section aria-labelledby="records-heading">
-                <h3 id="records-heading">Records</h3>
-                <ul>
-                    <p>Personal Record: {{ATHLETE_PR}}</p>
-                    <p>Season Record: {{ATHLETE_SR}}</p>
-                </ul>
-                </section>
+            <section aria-labelledby="records-heading-{{ATHLETE_ID}}">
+                <h4 id="records-heading-{{ATHLETE_ID}}">Records</h4>
+                <dl>
+                <dt>Personal Record</dt><dd>{{ATHLETE_PR}}</dd>
+                <dt>Season Record</dt><dd>{{ATHLETE_SR}}</dd>
+                </dl>
+            </section>
             </article>
         </section>
+        <section aria-labelledby="races-heading">
+            <h2 id="races-heading">Races</h2>
+            <form action="index.html" method="get" aria-labelledby="filter-heading">
+            <fieldset>
+                <legend id="filter-heading">Filters</legend>
 
+                <fieldset>
+                    <legend>Grade</legend>
+                    <input type="radio" id="g-all" name="grade" value="all" checked />
+                    <label for="g-all">All</label>
+                    <input type="radio" id="g-9" name="grade" value="9" />
+                    <label for="g-9">9th</label>
+                    <input type="radio" id="g-10" name="grade" value="10" />
+                    <label for="g-10">10th</label>
+                    <input type="radio" id="g-11" name="grade" value="11" />
+                    <label for="g-11">11th</label>
+                    <input type="radio" id="g-12" name="grade" value="12" />
+                    <label for="g-12">12th</label>
+                </fieldset>
+                
+                <div>
+                    <label for="sort">Sort by</label>
+                    <select id="sort" name="sort">
+                    <option value="time_asc">Time (fastest → slowest)</option>
+                    <option value="time_desc">Time (slowest → fastest)</option>
+                    <option value="place_asc">Placement (best → worst)</option>
+                    <option value="place_desc">Placement (worst → best)</option>
+                    <option value="date_desc">Date (newest → oldest)</option>
+                    <option value="date_asc">Date (oldest → newest)</option>
+                    </select>
+                </div>
 
-
-        <button type="button"class="athlete-card" aria-haspopup="dialog" aria-controls="meet-1" onclick="document.getElementById('meet-1').showModal()">
-            <img src="{{RACE_PHOTO}}" alt="Photo of {{RACE_NAME}} Meet" />
-            <h3>{{RACE_NAME}}</h3>
-            <p>Grade: {{RACE_GRADE}}</p>
-        </button>
-
-        <dialog id="meet-1" aria-labelledby="meet-1-title">
-            <h2 id="meet-1-title">{{RACE_NAME}}</h2>
-            <img src="{{RACE_PHOTO}}" alt="Photo of {{RACE_NAME}} Meet" />
-            <p>Date: {{RACE_DATE}}</p>
-            <p>Location: {{RACE_LOCATION}}</p>
-            <p>Time: {{RACE_TIME}}</p>
-            <p>Placement: {{RACE_PLACEMENT}}</p>
-            <a href = "{{RACE_LINK}}">Link to Athletic.net</a>
-            <form method="dialog">
-                <button>Close</button>
+                <button type="submit">Apply</button>
+            </fieldset>
             </form>
-        </dialog>
-        </main>
+
+
+            <article aria-label="Race card">
+                <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-{{RACE_ID}}" onclick="document.getElementById('meet-{{RACE_ID}}').showModal()">
+                <img src="{{RACE_PHOTO}}" alt="Photo of {{RACE_NAME}} Meet" />
+                <h3>{{RACE_NAME}}</h3>
+                <p>Grade: {{RACE_GRADE}}</p>
+                </button>
+
+                <dialog id="meet-{{RACE_ID}}" aria-labelledby="meet-{{RACE_ID}}-title">
+                <h3 id="meet-{{RACE_ID}}-title">{{RACE_NAME}}</h3>
+                <img src="{{RACE_PHOTO}}" alt="Photo of {{RACE_NAME}} Meet" />
+                <p>Date: {{RACE_DATE}}</p>
+                <p>Location: {{RACE_LOCATION}}</p>
+                <p>Time: {{RACE_TIME}}</p>
+                <p>Placement: {{RACE_PLACEMENT}}</p>
+                <p><a href="{{RACE_LINK}}">Link to Athletic.net</a></p>
+                <form method="dialog">
+                    <button>Close</button>
+                </form>
+                </dialog>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 School XC</p>
+        <p>Personal number: {{PERSONAL_NUMBER}}</p>
+        <p>Personal email: {{PERSONAL_EMAIL}}</p>
+    </footer>
   </body>
   
 </html>
