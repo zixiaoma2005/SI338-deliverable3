@@ -1,23 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Coach Comments</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>School XC — Coach Comments</title>
+    <link rel="stylesheet" href="reset.css" />
+  </head>
 
-  <label for="sort">Sort by:</label>
-  <select id="sort">
-    <option value="first">First Name (A–Z)</option>
-    <option value="last">Last Name (A–Z)</option>
-  </select>
+  <body>
+    <a href="#main">Skip to main content</a>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Coach Name</th>
-        <th>Comments</th>
-      </tr>
-    </thead>
-    <tbody id="table-body"></tbody>
-  </table>
+    <header>
+      <h1>School XC</h1>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Race</a></li>
+          <li><a aria-current="page" href="comments.html">Coach Comments</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="comments-heading">
+        <h2 id="comments-heading">Coach Comments</h2>
+
+        <form aria-labelledby="sort-heading">
+          <fieldset>
+            <legend id="sort-heading">Sort</legend>
+
+            <label for="sort">Sort by</label>
+            <select id="sort" name="sort">
+              <option value="first">First Name (A–Z)</option>
+              <option value="last">Last Name (A–Z)</option>
+            </select>
+          </fieldset>
+        </form>
+
+        /* Make a List for coach comments*/
+      </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 School XC</p>
+        <p>Personal number: {{PERSONAL_NUMBER}}</p>
+        <p>Personal email: {{PERSONAL_EMAIL}}</p>
+    </footer>
+  </body>
+</html>
