@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>School XC — Home</title>
+    <link rel="stylesheet" href="reset.css" />
+  </head>
+  <body>
+    <header>
+        <h1>School XC</h1>
+
+        <nav aria-label="Primary">
+            <ul>
+            <li><a aria-current="page" href="index.html">Race</a></li>
+            <li><a href="comment.html">Coach Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <main id="main">
+        <section aria-labelledby="athletes-heading">
+            <header>
+            <h2 id="athletes-heading">Athletes</h2>
+            </header>
+
+            <article id="alex-rivera" aria-labelledby="athlete-name">
+                <header>
+                    <img src="{{ATHLETE_PHOTO}}" alt="Photo of Alex Rivera" />
+                    <h2 id="athlete-name">{{ATHLETE_NAME}}</h2>
+                    <p>Grade: {{ATHLETE_GRADE}}</p>
+                </header>
+
+                <section aria-labelledby="bio-heading">
+                    <h3 id="bio-heading">Bio: </h3>
+                    <p>{{ATHLETE_BIO}}</p>
+                </section>
+
+                <section aria-labelledby="records-heading">
+                <h3 id="records-heading">Records</h3>
+                <ul>
+                    <p>Personal Record: {{ATHLETE_PR}}</p>
+                    <p>Season Record: {{ATHLETE_SR}}</p>
+                </ul>
+                </section>
+            </article>
+        </section>
+
+
+
+        <button type="button"class="athlete-card" aria-haspopup="dialog" aria-controls="meet-1" onclick="document.getElementById('meet-1').showModal()">
+            <img src="{{RACE_PHOTO}}" alt="Photo of {{RACE_NAME}} Meet" />
+            <h3>{{RACE_NAME}}</h3>
+            <p>Grade: {{RACE_GRADE}}</p>
+        </button>
+
+        <dialog id="meet-1" aria-labelledby="meet-1-title">
+            <h2 id="meet-1-title">{{RACE_NAME}}</h2>
+            <img src="{{RACE_PHOTO}}" alt="Photo of {{RACE_NAME}} Meet" />
+            <p>Date: {{RACE_DATE}}</p>
+            <p>Location: {{RACE_LOCATION}}</p>
+            <p>Time: {{RACE_TIME}}</p>
+            <p>Placement: {{RACE_PLACEMENT}}</p>
+            <a href = "{{RACE_LINK}}">Link to Athletic.net</a>
+            <form method="dialog">
+                <button>Close</button>
+            </form>
+        </dialog>
+        </main>
+  </body>
+  
+</html>
