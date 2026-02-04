@@ -1,3 +1,4 @@
+// NOTE: Used AI and Google to help write the code in this file.
 function parseDateFromDataset(article) {
   const raw = article.dataset.date || "";
   const t = Date.parse(raw);
