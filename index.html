@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Garrett Comer | XC Athlete Profile</title>
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="filters.js" defer></script>
   </head>
 
@@ -13,10 +14,8 @@
         <h1>Garrett Comer | XC Profile</h1>
 
         <nav aria-label="Primary">
-            <ul>
-            <li><a aria-current="page" href="index.html">Race</a></li>
-            <li><a href="gallery.html">Photo Gallery</a></li>
-            </ul>
+        <a aria-current="page" href="index.html">Race</a>
+        <a href="gallery.html">Photo Gallery</a>
         </nav>
     </header>
 
@@ -38,15 +37,15 @@
 
             <section aria-labelledby="records-heading-21615274">
                 <h4 id="records-heading-21615274">Records</h4>
-                <dl>
-                <dt>Personal Record</dt><dd>16:44.5</dd>
-                <dt>Season Record</dt><dd>16:44.5</dd>
-                </dl>
+                <p>Personal Record: 16:44.5</p>
+                <p>Season Record: 16:44.5</p>
             </section>
             </article>
         </section>
+
         <section aria-labelledby="races-heading">
             <h2 id="races-heading">Races</h2>
+            <div class="race-box">
             <form id="filters" action="index.html" method="get" aria-labelledby="filter-heading">
             <fieldset>
                 <legend id="filter-heading">Filters</legend>
@@ -600,6 +599,7 @@
                 </dialog>
             </article>
             </div>
+        </div>
         </section>
     </main>
     <footer>

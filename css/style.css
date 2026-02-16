@@ -1,0 +1,111 @@
+
+#races-heading {
+  margin-top: 2rem;   /* pushes the whole Races section down */
+  margin-bottom: 1rem;
+}
+
+/* Space between the filter form and the race cards grid */
+#filters {
+  margin-bottom: 1.5rem;
+}
+
+main h2 {
+  margin-left: 1rem;
+}
+
+header h1 {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+header nav {
+  margin-left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Profile header (photo + name + grade): bordered card */
+#athlete-21615274 > header {
+  margin: 0.6em;   /* outside border */
+  padding: 0.5rem 1rem;        /* left/right only */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: flex;          /* keep photo left, text right */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Small circular profile photo */
+#athlete-21615274 > header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bio + Records: same bordered card style */
+#athlete-21615274 section[aria-labelledby^="bio-heading"], #athlete-21615274 section[aria-labelledby^="records-heading"] {
+  margin: 0.6rem;     /* outside the border */
+  padding: 0 1rem;    /* left/right only */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+/* One border around Filters + Race Cards */
+.race-box {
+  margin: 0.6rem;
+  padding: 1rem;         /* left/right only */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+/* Remove border box around the Grade radio fieldset */
+#filters fieldset fieldset {
+  border: 0;
+}
+
+/* Race cards: 2-column grid for mobile */
+#race-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Ensure each cardfills its grid cell */
+#race-cards > article,
+#race-cards .athlete-card {
+  width: 100%;
+}
+/* Make images fill their card and maintain aspect ratio */
+.athlete-card img {
+  width: 100%;
+  padding-top: 0.3rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;   
+  display: block;
+}
+
+/* Make the card a structured */
+.athlete-card {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  text-align: left;
+}
+
+/* Only tighten space between title (h3) and grade (p) */
+.athlete-card p {
+  margin-top: 0;      /* removes the gap from h3 -> p */
+}
+
+/* Style the popup image */
+dialog img {
+  width: 100%;
+  max-width: 32rem;      
+  aspect-ratio: 1 / 1;
+  object-fit: cover;   
+  display: block;
+}
