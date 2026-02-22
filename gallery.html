@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Garrett Comer | Photo Gallery</title>
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts.js" defer></script>
   </head>
 
   <body>
@@ -12,10 +14,11 @@
       <h1>Garrett Comer | XC Profile</h1>
 
       <nav aria-label="Primary">
-        <ul>
-          <li><a href="index.html">Race</a></li>
-          <li><a aria-current="page" href="gallery.html">Photo Gallery</a></li>
-        </ul>
+        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
+        <div id="nav-links">
+          <a href="index.html">Race</a>
+          <a aria-current="page" href="gallery.html">Photo Gallery</a>
+        </div>
       </nav>
     </header>
 

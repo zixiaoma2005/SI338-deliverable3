@@ -6,7 +6,7 @@
     <title>Garrett Comer | XC Athlete Profile</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="filters.js" defer></script>
+    <script src="scripts.js" defer></script>
   </head>
 
   <body>    
@@ -14,8 +14,11 @@
         <h1>Garrett Comer | XC Profile</h1>
 
         <nav aria-label="Primary">
-        <a aria-current="page" href="index.html">Race</a>
-        <a href="gallery.html">Photo Gallery</a>
+          <button id="nav-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
+          <div id="nav-links">
+            <a aria-current="page" href="index.html">Race</a>
+            <a href="gallery.html">Photo Gallery</a>
+          </div>
         </nav>
     </header>
 
@@ -50,19 +53,16 @@
             <fieldset>
                 <legend id="filter-heading">Filters</legend>
 
-                <fieldset>
-                    <legend>Grade</legend>
-                    <input type="radio" id="g-all" name="grade" value="all" checked />
-                    <label for="g-all">All</label>
-                    <input type="radio" id="g-9" name="grade" value="9" />
-                    <label for="g-9">9th</label>
-                    <input type="radio" id="g-10" name="grade" value="10" />
-                    <label for="g-10">10th</label>
-                    <input type="radio" id="g-11" name="grade" value="11" />
-                    <label for="g-11">11th</label>
-                    <input type="radio" id="g-12" name="grade" value="12" />
-                    <label for="g-12">12th</label>
-                </fieldset>
+                <div>
+                    <label for="grade">Grade</label>
+                    <select id="grade" name="grade">
+                        <option value="all">All</option>
+                        <option value="9">9th</option>
+                        <option value="10">10th</option>
+                        <option value="11">11th</option>
+                        <option value="12">12th</option>
+                    </select>
+                </div>
                 
                 <div>
                     <label for="sort">Sort by</label>
