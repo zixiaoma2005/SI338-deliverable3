@@ -1,10 +1,9 @@
 
 #races-heading {
-  margin-top: 2rem;   /* pushes the whole Races section down */
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
-/* Space between the filter form and the race cards grid */
 #filters {
   margin-bottom: 1.5rem;
 }
@@ -13,31 +12,102 @@ main h2 {
   margin-left: 1rem;
 }
 
+header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+  background: white;
+  position: sticky;
+  top: 0;
+}
+
 header h1 {
   text-align: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.75rem;
 }
 
 header nav {
-  margin-left: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  margin-left: 0;
+  display: block;
 }
 
-/* Profile header (photo + name + grade): bordered card */
+#nav-toggle {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+}
+
+#nav-links {
+  display: none;
+  flex-direction: column;
+}
+
+#nav-links.open {
+  display: flex;
+}
+
+#nav-links a {
+  padding: 0.5rem 0;
+  border-top: 1px solid #eee;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 600px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+
+  #nav-toggle {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  #nav-links a {
+    border-top: none;
+    padding: 0;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+  }
+
+  #nav-links a[aria-current="page"] {
+    border-bottom-color: currentColor;
+  }
+}
+
 #athlete-21615274 > header {
-  margin: 0.6em;   /* outside border */
-  padding: 0.5rem 1rem;        /* left/right only */
+  position: static;
+  margin: 0.6em;
+  padding: 0.5rem 1rem;
   border: 1px solid #ccc;
   border-radius: 12px;
-  display: flex;          /* keep photo left, text right */
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Small circular profile photo */
 #athlete-21615274 > header img {
   width: 100px;
   height: 100px;
@@ -46,66 +116,127 @@ header nav {
   display: block;
 }
 
-/* Bio + Records: same bordered card style */
 #athlete-21615274 section[aria-labelledby^="bio-heading"], #athlete-21615274 section[aria-labelledby^="records-heading"] {
-  margin: 0.6rem;     /* outside the border */
-  padding: 0 1rem;    /* left/right only */
+  margin: 0.6rem;
+  padding: 0 1rem;
   border: 1px solid #ccc;
   border-radius: 12px;
 }
 
-/* One border around Filters + Race Cards */
 .race-box {
   margin: 0.6rem;
-  padding: 1rem;         /* left/right only */
+  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 12px;
 }
 
-/* Remove border box around the Grade radio fieldset */
+#filters fieldset {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
 #filters fieldset fieldset {
   border: 0;
 }
 
-/* Race cards: 2-column grid for mobile */
-#race-cards {
+#filters fieldset > div {
+  margin-top: 0.75rem;
+}
+
+#race-cards,
+.gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-/* Ensure each cardfills its grid cell */
+.gallery {
+  padding: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (min-width: 600px) {
+  #race-cards,
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  #race-cards,
+  .gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  #race-cards,
+  .gallery {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
 #race-cards > article,
 #race-cards .athlete-card {
   width: 100%;
 }
-/* Make images fill their card and maintain aspect ratio */
 .athlete-card img {
   width: 100%;
   padding-top: 0.3rem;
   aspect-ratio: 1/1;
-  object-fit: cover;   
+  object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 
-/* Make the card a structured */
 .athlete-card {
   height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
-/* Only tighten space between title (h3) and grade (p) */
+.athlete-card h3 {
+  flex: 1;
+}
+
 .athlete-card p {
-  margin-top: 0;      /* removes the gap from h3 -> p */
+  margin-top: 0;
 }
 
-/* Style the popup image */
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
 dialog img {
   width: 100%;
-  max-width: 32rem;      
+  max-width: 32rem;
   aspect-ratio: 1 / 1;
-  object-fit: cover;   
+  object-fit: cover;
   display: block;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+dialog h3 {
+  text-align: center;
+}
+
+dialog form {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
 }
