@@ -1,64 +1,374 @@
-
-#races-heading {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+/* Default CSS (light theme) */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --border: #cccccc;
+  --border-light: #eeeeee;
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --fab-bg: #333333;
+  --fab-text: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --dialog-bg: #ffffff;
 }
 
-#filters {
-  margin-bottom: 1.5rem;
+/* Page background and text color */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* Sticky header*/
+header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--header-bg);
+  position: sticky;
+  top: 0;
+}
+
+/* Site title */
+header h1 {
+  text-align: center;
+  padding-bottom: 0.75rem;
+}
+
+/* Nav container */
+header nav {
+  margin-left: 0;
+  display: block;
+}
+
+/* Hamburger menu button*/
+#nav-toggle {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* Nav links hidden by default on mobile */
+#nav-links {
+  display: none;
+  flex-direction: column;
+}
+
+/* Show nav links when menu is open */
+#nav-links.open {
+  display: flex;
+}
+
+/* Individual nav link styles */
+#nav-links a {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border-light);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Theme toggle button group */
+#theme-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Dark mode and high contrast toggle buttons */
+#theme-controls button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 main h2 {
   margin-left: 1rem;
 }
 
-header {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #ccc;
-  background: white;
-  position: sticky;
-  top: 0;
-}
-
-header h1 {
-  text-align: center;
-  padding-bottom: 0.75rem;
-}
-
-header nav {
-  margin-left: 0;
-  display: block;
-}
-
-#nav-toggle {
-  display: block;
-  width: 100%;
+/* Athlete profile card in a row */
+#athlete-21615274 > header {
+  position: static;
+  margin: 0.6em;
   padding: 0.5rem 1rem;
-  background: none;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: left;
-  font-size: 1rem;
-}
-
-#nav-links {
-  display: none;
-  flex-direction: column;
-}
-
-#nav-links.open {
+  border: 1px solid var(--border);
+  border-radius: 12px;
   display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-#nav-links a {
-  padding: 0.5rem 0;
-  border-top: 1px solid #eee;
-  text-decoration: none;
-  color: inherit;
+/* Circle profile picture with shadow */
+#athlete-21615274 > header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
-@media (min-width: 600px) {
+/* Bio and records sections */
+#athlete-21615274 section[aria-labelledby^="bio-heading"],
+#athlete-21615274 section[aria-labelledby^="records-heading"] {
+  position: static;
+  margin: 0.6rem;
+  padding: 0 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+
+/* Spacing for the heading */
+#races-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Bordered box wrapping filters and race cards */
+.race-box {
+  margin: 0.6rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+#filters {
+  margin-bottom: 1.5rem;
+}
+
+/* Filter fieldset border */
+#filters fieldset {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+#filters fieldset fieldset {
+  border: 0;
+}
+
+#filters fieldset > div {
+  margin-top: 0.75rem;
+}
+
+/* Two column grid for race cards and photo gallery */
+#race-cards,
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Extra padding for the gallery page grid */
+.gallery {
+  padding: 1rem;
+}
+
+/* Gallery images cropping */
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Each race card article fills its grid cell */
+#race-cards > article,
+#race-cards .athlete-card {
+  width: 100%;
+}
+
+/* Race card image cropping */
+.athlete-card img {
+  width: 100%;
+  padding-top: 0.3rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Race card layout */
+.athlete-card {
+  position: static;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.athlete-card h3 {
+  flex: 1;
+}
+
+.athlete-card p {
+  margin-top: 0;
+}
+
+/* Popup window */
+dialog {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: var(--dialog-bg);
+  color: var(--text);
+}
+
+/* Dialog image crop */
+dialog img {
+  width: 95%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+dialog h3 {
+  text-align: center;
+}
+
+/* Icons */
+.stat-date::before {
+  content: "📅  ";
+}
+
+.stat-time::before {
+  content: "⏱  ";
+}
+
+.stat-place::before {
+  content: "🏅  ";
+}
+
+dialog form {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+/* Floating action button */
+#JumptoFilters {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: var(--fab-bg);
+  color: var(--fab-text);
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+}
+
+#JumptoFilters.visible {
+  display: block;
+}
+
+/* Themes */
+html.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --border: #444444;
+  --border-light: #2a2a2a;
+  --header-bg: #1e1e1e;
+  --card-bg: #252525;
+  --fab-bg: #555555;
+  --fab-text: #ffffff;
+  --shadow: rgba(255, 255, 255, 0.08);
+  --dialog-bg: #1e1e1e;
+}
+
+html.high-contrast {
+  --bg: #ffffff;
+  --text: #000000;
+  --border: #000000;
+  --border-light: #000000;
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --fab-bg: #000000;
+  --fab-text: #ffffff;
+  --shadow: none;
+  --dialog-bg: #ffffff;
+}
+
+html.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --border: #cccccc;
+  --border-light: #eeeeee;
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --fab-bg: #333333;
+  --fab-text: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --dialog-bg: #ffffff;
+}
+
+/* Media queries for themes */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #e0e0e0;
+    --border: #444444;
+    --border-light: #2a2a2a;
+    --header-bg: #1e1e1e;
+    --card-bg: #252525;
+    --fab-bg: #555555;
+    --fab-text: #ffffff;
+    --shadow: rgba(255, 255, 255, 0.08);
+    --dialog-bg: #1e1e1e;
+  }
+}
+
+/* Disable animations */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+
+  .athlete-card {
+    transition: none;
+    box-shadow: none;
+  }
+}
+
+/* Commented out for size-based media */
+/* @media (min-width: 600px) {
   header {
     display: flex;
     align-items: center;
@@ -95,74 +405,19 @@ header nav {
   #nav-links a[aria-current="page"] {
     border-bottom-color: currentColor;
   }
-}
 
-#athlete-21615274 > header {
-  position: static;
-  margin: 0.6em;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  #theme-controls {
+    margin-top: 0;
+  }
+} */
 
-#athlete-21615274 > header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
+/* @media (min-width: 600px) {
+  #JumptoFilters.visible {
+    display: none;
+  }
+} */
 
-#athlete-21615274 section[aria-labelledby^="bio-heading"], #athlete-21615274 section[aria-labelledby^="records-heading"] {
-  margin: 0.6rem;
-  padding: 0 1rem;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-}
-
-.race-box {
-  margin: 0.6rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-}
-
-#filters fieldset {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-
-#filters fieldset fieldset {
-  border: 0;
-}
-
-#filters fieldset > div {
-  margin-top: 0.75rem;
-}
-
-#race-cards,
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.gallery {
-  padding: 1rem;
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-}
-
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   #race-cards,
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -181,62 +436,4 @@ header nav {
   .gallery {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
-}
-
-#race-cards > article,
-#race-cards .athlete-card {
-  width: 100%;
-}
-.athlete-card img {
-  width: 100%;
-  padding-top: 0.3rem;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-}
-
-.athlete-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-.athlete-card h3 {
-  flex: 1;
-}
-
-.athlete-card p {
-  margin-top: 0;
-}
-
-dialog {
-  border: none;
-  border-radius: 10px;
-  padding: 1.5rem;
-}
-
-dialog img {
-  width: 100%;
-  max-width: 32rem;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
-dialog h3 {
-  text-align: center;
-}
-
-dialog form {
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-}
+} */
