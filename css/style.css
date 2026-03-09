@@ -368,9 +368,4 @@ html.light {
   .fade-in {
     animation: none;
   }
-
-  .athlete-card {
-    transition: none;
-    box-shadow: none;
-  }
 }
