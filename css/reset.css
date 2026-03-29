@@ -1,14 +1,25 @@
 /* reset.css */
+/* NOTE: Used Google to help write the code in this file(What needs to be included in reset.css and why).*/
+/* Include padding and border in element size */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+/* Prevent font scaling and enable smooth scrolling */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
+/* Default margin and set line spacing */
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Media elements block-level and prevent overflow */
 img,
 picture,
 video,
@@ -16,8 +27,10 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
+/* Inherit font from parent */
 input,
 button,
 textarea,
@@ -25,6 +38,18 @@ select {
   font: inherit;
 }
 
+/* Remove default text transforms */
+button,
+select {
+  text-transform: none;
+}
+
+/* Vertical resizing on textareas */
+textarea {
+  resize: vertical;
+}
+
+/* Prevent text overflow */
 p,
 h1,
 h2,
@@ -35,3 +60,58 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* Default list indentation */
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+/* Remove gaps between table cells */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default fieldset border and spacing */
+fieldset {
+  border: none;
+  margin: 0;
+}
+
+/* Remove default legend padding */
+legend {
+  padding: 0;
+}
+
+/* Consistent horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px solid currentColor;
+}
+
+/* Links inherit text color */
+a {
+  color: inherit;
+}
+
+/* Hidden attribute always hides elements */
+[hidden] {
+  display: none;
+}
+
+/* Consistent sub and sup */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}

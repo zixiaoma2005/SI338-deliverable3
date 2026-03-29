@@ -19,7 +19,6 @@ body {
   color: var(--text);
 }
 
-
 /* Sticky header*/
 header {
   padding: 0.75rem 1rem;
@@ -368,4 +367,85 @@ html.light {
   .fade-in {
     animation: none;
   }
+}
+
+/* size-based media */
+@media (min-width: 600px) {
+ header {
+   align-items: center;
+   justify-content: space-between;
+ }
+
+
+ header h1 {
+   padding-bottom: 0;
+   text-align: left;
+ }
+
+
+ header nav {
+   display: flex;
+   align-items: center;
+ }
+
+
+ #nav-toggle {
+   display: none;
+ }
+
+
+ #nav-links {
+   display: flex;
+   flex-direction: row;
+   gap: 1.5rem;
+ }
+
+
+ #nav-links a {
+   border-top: none;
+   padding: 0;
+   padding-bottom: 3px;
+   border-bottom: 2px solid transparent;
+ }
+
+
+ #nav-links a[aria-current="page"] {
+   border-bottom-color: currentColor;
+ }
+
+
+ #theme-controls {
+   margin-top: 1rem;
+ }
+}
+
+
+@media (min-width: 600px) {
+ #JumptoFilters.visible {
+   display: none;
+ }
+}
+
+
+@media (min-width: 600px) {
+ #race-cards,
+ .gallery {
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+ }
+}
+
+
+@media (min-width: 900px) {
+ #race-cards,
+ .gallery {
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+ }
+}
+
+
+@media (min-width: 1200px) {
+ #race-cards,
+ .gallery {
+   grid-template-columns: repeat(5, minmax(0, 1fr));
+ }
 }
