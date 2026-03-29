@@ -13,23 +13,28 @@
   <body>    
     <header>
         <h1>Garrett Comer | XC Profile</h1>
-        <nav aria-label="Primary">
+        <nav>
+          <!-- Tells screen readers if the menu is open or closed and the control links button to the element it toggles -->
           <button id="nav-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
           <div id="nav-links">
+            <!-- Tells screen readers which page they are curretly on -->
             <a aria-current="page" href="index.html">Race</a>
             <a href="gallery.html">Photo Gallery</a>
           </div>
         </nav>
         <div id="theme-controls">
+          <!-- The buttons contain only icons so it provides a text description-->
           <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
           <button id="contrast-toggle" aria-label="Toggle high contrast">◑</button>
         </div>
     </header>
 
     <main id="main">
+        <!-- It gives the section an accessible name -->
         <section aria-labelledby="athlete-section-heading">
             <h2 id="athlete-section-heading">Athlete</h2>
 
+            <!-- It names the article with the athlete's heading so screen readers can identify it -->
             <article id="athlete-21615274" aria-labelledby="athlete-name-21615274">
             <header>
                 <img src="images/Cover Photo.jpg" alt="Photo of Garrett Comer" width="300"/>
@@ -37,6 +42,7 @@
                 <p>Grade: 12</p>
             </header>
 
+            <!-- It names each sub-section so screen readers can navigate to Bio and Records -->
             <section aria-labelledby="bio-heading-21615274">
                 <h4 id="bio-heading-21615274">Bio</h4>
                 <p>Garrett is a junior on the skyline xc team. After a mediocre freshman year and a devestating season lasting injury his sophmore year, Garrett was more determended than ever to run well. He was one of the most consistant runners on the team getting that top 7 spot on the team every single race. He excelled in not just running but motivating, by always leading cheers and getting everyone hyped up while still staying positive. His favroite memories of the team was being at camp with everyone and playing games all day while still being full of energy. His favroite race was at holly when their team placed first and went up on stage togerther with a big trophie.</p>
@@ -50,9 +56,11 @@
             </article>
         </section>
 
+        <!-- It names the Races section as a navigable landmark -->
         <section aria-labelledby="races-heading">
             <h2 id="races-heading">Races</h2>
             <div class="race-box">
+            <!-- Gives the form an accessible name -->
             <form id="filters" action="index.html" method="get" aria-labelledby="filter-heading">
             <fieldset>
                 <legend id="filter-heading">Filters</legend>
@@ -83,13 +91,16 @@
             </form>
 
             <div id="race-cards">
-            <article aria-label="Race card" data-grade="11" data-year="2025" data-place="35" data-date="Aug 15 2025" data-time="17:22.3" data-time-seconds="1042.3">
+            <article data-grade="11" data-year="2025" data-place="35" data-date="Aug 15 2025" data-time="17:22.3" data-time-seconds="1042.3">
+                <!-- Tells screen readers this button opens a dialog and the controls ids which dialog it opens-->
+                <!-- this repears for all race cards-->
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-1" onclick="document.getElementById('meet-race-1').showModal()">
                 <img src="images/2025 Lamplighter.jpg" alt="Photo of Lamplighter Invitational Meet" width="300"/>
                 <h3>Lamplighter Invitational</h3>
                 <p>Grade: 11</p>
                 </button>
 
+                <!-- It names the dialog with its heading so screen readers announce it correctly-->
                 <dialog id="meet-race-1" aria-labelledby="meet-race-1-title">
                 <h3 id="meet-race-1-title">Lamplighter Invitational</h3>
                 <img src="images/2025 Lamplighter.jpg" alt="Photo of Lamplighter Invitational Meet" />
@@ -103,7 +114,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="9" data-date="Aug 27 2025" data-time="17:40.1" data-time-seconds="1060.1">
+<article data-grade="11" data-year="2025" data-place="9" data-date="Aug 27 2025" data-time="17:40.1" data-time-seconds="1060.1">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-2" onclick="document.getElementById('meet-race-2').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025AARC.jpg" alt="Photo of 2nd Ann Arbor City Preview presented by AARC Meet" width="300"/>
                 <h3>2nd Ann Arbor City Preview presented by AARC</h3>
@@ -123,7 +134,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="22" data-date="Sep 9 2025" data-time="16:55.1" data-time-seconds="1015.1">
+<article data-grade="11" data-year="2025" data-place="22" data-date="Sep 9 2025" data-time="16:55.1" data-time-seconds="1015.1">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-3" onclick="document.getElementById('meet-race-3').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025SEC_HSJamboree1.jpg" alt="Photo of SEC-HS Jamboree 1 (Red/White Varsity Boys) Meet" width="300"/>
                 <h3>SEC-HS Jamboree 1 (Red/White Varsity Boys)</h3>
@@ -143,7 +154,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="28" data-date="Sep 13 2025" data-time="16:58.4" data-time-seconds="1018.4">
+<article data-grade="11" data-year="2025" data-place="28" data-date="Sep 13 2025" data-time="16:58.4" data-time-seconds="1018.4">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-4" onclick="document.getElementById('meet-race-4').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/202557thHolly-Duane.jpg" alt="Photo of 57th Annual Holly-Duane Raffin Festival of Races (D1 Boys) Meet" width="300"/>
                 <h3>57th Annual Holly-Duane Raffin Festival of Races (D1 Boys)</h3>
@@ -163,7 +174,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="81" data-date="Sep 20 2025" data-time="16:46.8" data-time-seconds="1006.8">
+<article data-grade="11" data-year="2025" data-place="81" data-date="Sep 20 2025" data-time="16:46.8" data-time-seconds="1006.8">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-5" onclick="document.getElementById('meet-race-5').showModal()">
                 <img src="images/logo.jpeg" alt="Photo of Jackson Invitational (Orange Division (1000 + enrolment)) Meet" width="300"/>
                 <h3>Jackson Invitational (Orange Division (1000 + enrolment))</h3>
@@ -183,7 +194,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="23" data-date="Sep 25 2025" data-time="16:55.9" data-time-seconds="1015.9">
+<article data-grade="11" data-year="2025" data-place="23" data-date="Sep 25 2025" data-time="16:55.9" data-time-seconds="1015.9">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-6" onclick="document.getElementById('meet-race-6').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025SEC_HSJamboree2.jpg" alt="Photo of SEC-HS Jamboree 2 (Red) (Varsity Boys (Top 10)) Meet" width="300"/>
                 <h3>SEC-HS Jamboree 2 (Red) (Varsity Boys (Top 10))</h3>
@@ -203,7 +214,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="19" data-date="Sep 27 2025" data-time="16:55.4" data-time-seconds="1015.4">
+<article data-grade="11" data-year="2025" data-place="19" data-date="Sep 27 2025" data-time="16:55.4" data-time-seconds="1015.4">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-7" onclick="document.getElementById('meet-race-7').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025DeWittXCInvitational.jpg" alt="Photo of DeWitt Cross Country Invitational (Boys Varsity Division 1 and 2) Meet" width="300"/>
                 <h3>DeWitt Cross Country Invitational (Boys Varsity Division 1 and 2)</h3>
@@ -223,7 +234,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="46" data-date="Oct 4 2025" data-time="16:49.8" data-time-seconds="1009.8">
+<article data-grade="11" data-year="2025" data-place="46" data-date="Oct 4 2025" data-time="16:49.8" data-time-seconds="1009.8">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-8" onclick="document.getElementById('meet-race-8').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025PortageInvitational.jpg" alt="Photo of 2025 Portage Invitational (Division 1) Meet" width="300"/>
                 <h3>2025 Portage Invitational (Division 1)</h3>
@@ -243,7 +254,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="20" data-date="Oct 10 2025" data-time="17:16.1" data-time-seconds="1036.1">
+<article data-grade="11" data-year="2025" data-place="20" data-date="Oct 10 2025" data-time="17:16.1" data-time-seconds="1036.1">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-9" onclick="document.getElementById('meet-race-9').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025_20thRiverRatOpen.jpg" alt="Photo of 20th River Rat Open / Regional Preview (All Boys) Meet" width="300"/>
                 <h3>20th River Rat Open / Regional Preview (All Boys)</h3>
@@ -263,7 +274,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="19" data-date="Oct 16 2025" data-time="17:00.5" data-time-seconds="1020.5">
+<article data-grade="11" data-year="2025" data-place="19" data-date="Oct 16 2025" data-time="17:00.5" data-time-seconds="1020.5">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-10" onclick="document.getElementById('meet-race-10').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2025_SEC-HSChampionship.jpg" alt="Photo of SEC-HS Championship (Varsity RED) Meet" width="300"/>
                 <h3>SEC-HS Championship (Varsity RED)</h3>
@@ -283,7 +294,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="31" data-date="Oct 24 2025" data-time="16:43.8" data-time-seconds="1003.8">
+<article data-grade="11" data-year="2025" data-place="31" data-date="Oct 24 2025" data-time="16:43.8" data-time-seconds="1003.8">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-11" onclick="document.getElementById('meet-race-11').showModal()">
                 <img src="images/logo.jpeg" alt="Photo of MHSAA LP Region 04-01 @ DeWitt (C) Meet" width="300"/>
                 <h3>MHSAA LP Region 04-01 @ DeWitt (C)</h3>
@@ -303,7 +314,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="11" data-year="2025" data-place="52" data-date="Nov 8 2025" data-time="16:44.5" data-time-seconds="1004.5">
+<article data-grade="11" data-year="2025" data-place="52" data-date="Nov 8 2025" data-time="16:44.5" data-time-seconds="1004.5">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-12" onclick="document.getElementById('meet-race-12').showModal()">
                 <img src="images/logo.jpeg" alt="Photo of MITCA Michigan Meet of Champions 2025 by HOKA (Boys Elite Open #2) Meet" width="300"/>
                 <h3>MITCA Michigan Meet of Champions 2025 by HOKA (Boys Elite Open #2)</h3>
@@ -323,7 +334,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="10" data-year="2024" data-place="160" data-date="Aug 29 2024" data-time="21:04.2" data-time-seconds="1264.2">
+<article data-grade="10" data-year="2024" data-place="160" data-date="Aug 29 2024" data-time="21:04.2" data-time-seconds="1264.2">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-13" onclick="document.getElementById('meet-race-13').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2024EarlyBirdOpen.jpg" alt="Photo of 37th Early Bird Open (HS Open 5K) Meet" width="300"/>
                 <h3>37th Early Bird Open (HS Open 5K)</h3>
@@ -343,7 +354,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="10" data-year="2024" data-place="318" data-date="Oct 5 2024" data-time="21:04.9" data-time-seconds="1264.9">
+<article data-grade="10" data-year="2024" data-place="318" data-date="Oct 5 2024" data-time="21:04.9" data-time-seconds="1264.9">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-14" onclick="document.getElementById('meet-race-14').showModal()">
                 <img src="images/logo.jpeg" alt="Photo of 2024 Portage Invitational Meet" width="300"/>
                 <h3>2024 Portage Invitational</h3>
@@ -363,7 +374,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="10" data-year="2024" data-place="99" data-date="Oct 11 2024" data-time="20:34.8" data-time-seconds="1234.8">
+<article data-grade="10" data-year="2024" data-place="99" data-date="Oct 11 2024" data-time="20:34.8" data-time-seconds="1234.8">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-15" onclick="document.getElementById('meet-race-15').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/Garrett_RiverRat_2024.JPG" alt="Photo of 19th River Rat Open Meet" width="300"/>
                 <h3>19th River Rat Open</h3>
@@ -383,7 +394,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="10" data-year="2024" data-place="49" data-date="Oct 17 2024" data-time="19:17.8" data-time-seconds="1157.8">
+<article data-grade="10" data-year="2024" data-place="49" data-date="Oct 17 2024" data-time="19:17.8" data-time-seconds="1157.8">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-16" onclick="document.getElementById('meet-race-16').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC_2024.JPG" alt="Photo of SEC-HS Championship Meet" width="300"/>
                 <h3>SEC-HS Championship</h3>
@@ -403,7 +414,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="10" data-year="2024" data-place="23" data-date="Oct 26 2024" data-time="18:42.7 SR">
+<article data-grade="10" data-year="2024" data-place="23" data-date="Oct 26 2024" data-time="18:42.7 SR">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-17" onclick="document.getElementById('meet-race-17').showModal()">
                 <img src="images/2024 Region 4-1 & 16-2 PROM Races.jpg" alt="Photo of Region 4-1 &amp; 16-2 PROM Races Meet" width="300"/>
                 <h3>Region 4-1 &amp; 16-2 PROM Races</h3>
@@ -423,7 +434,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="67" data-date="Aug 31 2023" data-time="19:45.4" data-time-seconds="1185.4">
+<article data-grade="9" data-year="2023" data-place="67" data-date="Aug 31 2023" data-time="19:45.4" data-time-seconds="1185.4">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-18" onclick="document.getElementById('meet-race-18').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2023EarlyBirdOpen.jpg" alt="Photo of Early Bird Open (Open Men&#x27;s 5K) Meet" width="300"/>
                 <h3>Early Bird Open (Open Men&#x27;s 5K)</h3>
@@ -443,7 +454,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="23" data-date="Sep 9 2023" data-time="19:16.3" data-time-seconds="1156.3">
+<article data-grade="9" data-year="2023" data-place="23" data-date="Sep 9 2023" data-time="19:16.3" data-time-seconds="1156.3">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-19" onclick="document.getElementById('meet-race-19').showModal()">
                 <img src="images/2023 Bret Clements Bath Invitational (J.V.)" alt="Photo of Bret Clements Bath Invitational (J.V.) Meet" width="300"/>
                 <h3>Bret Clements Bath Invitational (J.V.)</h3>
@@ -463,7 +474,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="97" data-date="Sep 13 2023" data-time="19:22.2" data-time-seconds="1162.2">
+<article data-grade="9" data-year="2023" data-place="97" data-date="Sep 13 2023" data-time="19:22.2" data-time-seconds="1162.2">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-20" onclick="document.getElementById('meet-race-20').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC1_2023.jpg" alt="Photo of SEC-HS Jamboree 1 (Red/White Varsity Boys) Meet" width="300"/>
                 <h3>SEC-HS Jamboree 1 (Red/White Varsity Boys)</h3>
@@ -483,7 +494,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="206" data-date="Sep 23 2023" data-time="18:47.9" data-time-seconds="1127.9">
+<article data-grade="9" data-year="2023" data-place="206" data-date="Sep 23 2023" data-time="18:47.9" data-time-seconds="1127.9">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-21" onclick="document.getElementById('meet-race-21').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/Garrett_Jackson_2023.JPG" alt="Photo of Jackson Invitational - Varsity (Orange Division (1000 + enrolment)) Meet" width="300"/>
                 <h3>Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</h3>
@@ -503,7 +514,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="21" data-date="Sep 27 2023" data-time="18:36.0" data-time-seconds="1116.0">
+<article data-grade="9" data-year="2023" data-place="21" data-date="Sep 27 2023" data-time="18:36.0" data-time-seconds="1116.0">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-22" onclick="document.getElementById('meet-race-22').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC2_2023.JPG" alt="Photo of SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00)) Meet" width="300"/>
                 <h3>SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</h3>
@@ -523,7 +534,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="104" data-date="Oct 7 2023" data-time="18:47.1" data-time-seconds="1127.1">
+<article data-grade="9" data-year="2023" data-place="104" data-date="Oct 7 2023" data-time="18:47.1" data-time-seconds="1127.1">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-23" onclick="document.getElementById('meet-race-23').showModal()">
                 <img src="images/logo.jpeg" alt="Photo of 2023 Portage XC Invitational (Division 1 Reserve) Meet" width="300"/>
                 <h3>2023 Portage XC Invitational (Division 1 Reserve)</h3>
@@ -543,7 +554,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="134" data-date="Oct 14 2023" data-time="20:06.6" data-time-seconds="1206.6">
+<article data-grade="9" data-year="2023" data-place="134" data-date="Oct 14 2023" data-time="20:06.6" data-time-seconds="1206.6">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-24" onclick="document.getElementById('meet-race-24').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/Garrett_GabrielRichard2023.jpg" alt="Photo of 39th Fr Gabriel Richard Cross Country Invite (Varsity Large School) Meet" width="300"/>
                 <h3>39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</h3>
@@ -563,7 +574,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="44" data-date="Oct 19 2023" data-time="19:21.8" data-time-seconds="1161.8">
+<article data-grade="9" data-year="2023" data-place="44" data-date="Oct 19 2023" data-time="19:21.8" data-time-seconds="1161.8">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-25" onclick="document.getElementById('meet-race-25').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2023EarlyBirdOpen.jpg" alt="Photo of SEC HS Championship (All Division Reserve) Meet" width="300"/>
                 <h3>SEC HS Championship (All Division Reserve)</h3>
@@ -583,7 +594,7 @@
                 </dialog>
             </article>
 
-<article aria-label="Race card" data-grade="9" data-year="2023" data-place="13" data-date="Oct 28 2023" data-time="18:24.6" data-time-seconds="1104.6">
+<article data-grade="9" data-year="2023" data-place="13" data-date="Oct 28 2023" data-time="18:24.6" data-time-seconds="1104.6">
                 <button type="button" class="athlete-card" aria-haspopup="dialog" aria-controls="meet-race-26" onclick="document.getElementById('meet-race-26').showModal()">
                 <img src="https://si339.github.io/ClientData/21615274/2023EarlyBirdOpen.jpg" alt="Photo of Post Regional Open Meet (PROM) - Springfiled Oaks Meet" width="300"/>
                 <h3>Post Regional Open Meet (PROM) - Springfiled Oaks</h3>
@@ -609,6 +620,7 @@
     <footer>
         <p>&copy; 2026 School XC</p>
     </footer>
+    <!-- Overrides the text "Filter" with a more descriptive label for screen readers -->
     <button id="JumptoFilters" aria-label="Jump to filters">Filter</button>
   </body>
   

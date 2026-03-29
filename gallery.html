@@ -13,14 +13,17 @@
   <body>
     <header>
       <h1>Garrett Comer | XC Profile</h1>
-      <nav aria-label="Primary">
+      <nav>
+        <!-- Tells screen readers if the menu is open or closed and the control links button to the element it toggles -->
         <button id="nav-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
         <div id="nav-links">
           <a href="index.html">Race</a>
+          <!-- Tells screen readers which page is they are currently on -->
           <a aria-current="page" href="gallery.html">Photo Gallery</a>
         </div>
       </nav>
       <div id="theme-controls">
+        <!-- The buttons contain only icons so it provides a text description -->
         <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
         <button id="contrast-toggle" aria-label="Toggle high contrast">◑</button>
       </div>
