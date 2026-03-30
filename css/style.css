@@ -1,4 +1,12 @@
 /* Default CSS (light theme) */
+
+/* Variable explanation:*/
+/* First you define the variables inside of a selector (--{variable_name}: {value})*/
+/* To use those variables, you write var(--{variable_name}) for values*/
+/* It is useful because you don't have to hardcode those values everywhere */
+/* And you can re-define them and it will update automatically */
+/* Really useful when it comes to implementing light and dark theme */
+
 :root {
   --bg: #ffffff;
   --text: #000000;
