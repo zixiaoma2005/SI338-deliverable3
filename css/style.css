@@ -213,6 +213,20 @@ main h2 {
   border: 1px solid var(--border);
   background: var(--card-bg);
   color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Highlight card on hover */
+.athlete-card:hover {
+  border-color: var(--text);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Bolder hover in high contrast mode */
+html.high-contrast .athlete-card:hover {
+  border-width: 3px;
+  outline: 2px solid #000000;
 }
 
 
