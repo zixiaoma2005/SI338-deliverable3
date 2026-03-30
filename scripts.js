@@ -1,8 +1,9 @@
-// NOTE: Used AI and Google to help write the code in this file.
+// NOTE: Used AI(Claude) and Google to help write the code in this file.
 
 // Theme management
 // Apply OS preference on page load
 const html = document.documentElement;
+// localStorage persists data across page loads
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
   html.classList.add('dark');
@@ -70,6 +71,9 @@ if (JumptoFilters) {
     const header = document.querySelector('header');
     if (filters) {
       const headerHeight = header ? header.offsetHeight : 0;
+      // getBoundingClientRect gives the element's position relative to the viewport
+      // Adding window.scrollY converts it to absolute position
+      // Subtracting headerHeight accounts for the sticky header so it isn't covered
       const top = filters.getBoundingClientRect().top + window.scrollY - headerHeight;
       window.scrollTo({ top, behavior: 'smooth' });
     }
@@ -93,6 +97,7 @@ function getNum(el, key) {
 // Filter logic
 // Read grade and sort from URL params.
 function syncControlsFromURL() {
+  // URLSearchParams parses the query string into key-value pairs
   const params = new URLSearchParams(window.location.search);
   const grade = params.get("grade") || "all";
   const sort = params.get("sort") || "date_desc";
@@ -108,7 +113,7 @@ function applyGradeAndSort(grade, sort) {
   const container = document.getElementById("race-cards");
   if (!container) return;
 
-  const cards = Array.from(container.querySelectorAll('article[aria-label="Race card"]'));
+  const cards = Array.from(container.querySelectorAll('article'));
 
   cards.forEach(card => {
     const cardGrade = card.dataset.grade;
@@ -150,6 +155,7 @@ function updateURL(grade, sort) {
   const url = new URL(window.location.href);
   url.searchParams.set("grade", grade);
   url.searchParams.set("sort", sort);
+  // history.replaceState updates the URL in the browser without reloading the page
   history.replaceState({}, "", url);
 }
 
